@@ -15,7 +15,7 @@ import sys
 import json
 import matplotlib.pyplot as plt
 import numpy as np
-
+from allocator.partition_alloc_adv import PartitionRoot
 
 ###############################################################################
 #                              ALLOCATOR MODULE
@@ -309,7 +309,7 @@ class FreelistAnalyzer:
     """Analyzes freelist structures and behavior."""
     
     def __init__(self, allocator):
-        self.allocator = allocator
+        self.allocator = PartitionRoot()
         self.allocation_history = []  # (action, alloc_id, size, type)
     
     def record_allocation(self, alloc_id, size, object_type):
