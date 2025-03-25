@@ -15,7 +15,7 @@ import sys
 import json
 import matplotlib.pyplot as plt
 import numpy as np
-from allocator.partition_alloc_adv import PartitionRoot
+from partition_alloc_adv import PartitionRoot
 
 ###############################################################################
 #                              ALLOCATOR MODULE
