@@ -1,0 +1,34 @@
+name: Test HeapKit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) Check out your repository's code
+      - uses: actions/checkout@v3
+
+      # 2) Set up Python (adjust the version as desired)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # 3) Install dependencies
+      #    If you have a requirements.txt, specify it below.
+      #    If not, you can remove this step or adapt as needed.
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4) Run a basic test: here, we just run the "demo" command
+      #    in heapkit.py. Adapt to your actual testing approach.
+      - name: Run HeapKit Demo
+        run: |
+          python heapkit.py demo
